@@ -32,4 +32,4 @@ Built as a course project to practice relational modelling, EF Core migrations a
    ```
 
 ## Author
-Yusuf Yahya Değirmenci — [GitHub](https://github.com/23380101076) · [LinkedIn](https://www.linkedin.com/in/yusufydegirmenci/)
+Yusuf Yahya Değirmenci — [GitHub](https://github.com/yusufydegirmenci) · [LinkedIn](https://www.linkedin.com/in/yusufydegirmenci/)
