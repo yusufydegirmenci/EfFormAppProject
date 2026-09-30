@@ -55,7 +55,9 @@ namespace EfFormAppProject.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=EfFormProject;User=SA;Password=17254001684;Integrated Security=true;TrustServerCertificate=true;");
+            var connectionString = Environment.GetEnvironmentVariable("OBS_CONNECTION_STRING")
+                ?? "Server=localhost;Database=EfFormProject;Integrated Security=true;TrustServerCertificate=true;";
+            optionsBuilder.UseSqlServer(connectionString);
         }
     }
 }
