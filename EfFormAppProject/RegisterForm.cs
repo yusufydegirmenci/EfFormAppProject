@@ -100,7 +100,6 @@ namespace EfFormAppProject
 
                     context.Students.Add(addStudent);
 
-                    classToUpdate.Quota -= 1;
 
                     context.SaveChanges();
 
