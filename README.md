@@ -15,10 +15,15 @@ Built as a course project to practice relational modelling, EF Core migrations a
 ## Data model
 `Classroom` 1 — * `Student` * — * `Lesson` (join entity: `StudentLesson`)
 
-## Tech stack
-- C# / .NET 8 (Windows Forms)
-- Entity Framework Core 8 (SQL Server provider, Code First migrations)
-- SQL Server
+## Technology and architecture
+
+| Area | What is used | How |
+|---|---|---|
+| Language and runtime | **C#** on **.NET 8** (`net8.0-windows`) | Windows desktop application. |
+| UI | **Windows Forms** | `Form1` (add, find, update students), `DersSecimi` (lesson selection), `RegisterForm` (student record form). |
+| ORM | **Entity Framework Core 8** (`Microsoft.EntityFrameworkCore.SqlServer` 8.0.0, `...Tools` 8.0.0) | **Code First**: the schema comes from the model classes, and `dotnet ef` migrations in `Migrations/` create and evolve the database. |
+| Database | **Microsoft SQL Server** (LocalDB or Express works) | Default database `EfFormProject` on `localhost` with Windows authentication. Override the connection string with the `OBS_CONNECTION_STRING` environment variable. |
+| Data model | `Classroom` 1-* `Student` *-* `Lesson` | The many-to-many link is the explicit join entity `StudentLesson`; the classroom quota is checked in code. |
 
 ## Getting started
 1. Install the .NET 8 SDK and SQL Server (LocalDB or Express works).
