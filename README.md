@@ -2,9 +2,7 @@
 
 ![C#](https://img.shields.io/badge/C%23-.NET%208-512bd4) ![EF Core](https://img.shields.io/badge/EF%20Core-8-informational) ![SQL Server](https://img.shields.io/badge/SQL%20Server-Code%20First-cc2927) ![Windows Forms](https://img.shields.io/badge/UI-Windows%20Forms-0078d4)
 
-A Windows Forms student registration and course selection app built with **C# (.NET 8)** and **Entity Framework Core (Code First)** on **SQL Server**.
-
-Built as a course project to practice relational modelling, EF Core migrations and desktop UI development.
+A small Windows Forms app for registering students, putting them in classrooms and choosing their lessons. Built as a course project to practice relational modelling, EF Core migrations and desktop UI development.
 
 ## Features
 - Register, search and update students (name, surname, student number)
@@ -15,10 +13,15 @@ Built as a course project to practice relational modelling, EF Core migrations a
 ## Data model
 `Classroom` 1 — * `Student` * — * `Lesson` (join entity: `StudentLesson`)
 
-## Tech stack
-- C# / .NET 8 (Windows Forms)
-- Entity Framework Core 8 (SQL Server provider, Code First migrations)
-- SQL Server
+## Technology and infrastructure
+
+| Part | What it uses | Notes |
+|---|---|---|
+| Language | C# on .NET 8 | The project targets `net8.0-windows`. |
+| Interface | Windows Forms | Windows only. |
+| Data access | Entity Framework Core 8 | `Microsoft.EntityFrameworkCore.SqlServer` and `.Tools` 8.0.0, Code First with migrations. |
+| Database | SQL Server | LocalDB or Express is enough. The database is created from the migrations. |
+| Connection | `OBS_CONNECTION_STRING` | Read from an environment variable in `Data/ObsDbContext.cs`, so no password ends up in the code. |
 
 ## Getting started
 1. Install the .NET 8 SDK and SQL Server (LocalDB or Express works).
